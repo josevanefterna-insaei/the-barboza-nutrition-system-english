@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Purchase Confirmed | The Barboza Nutrition System</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      min-height:100vh;
+      font-family:Manrope,Arial,sans-serif;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(181,143,106,.18), transparent 32%),
+        radial-gradient(circle at 85% 80%, rgba(91,112,79,.12), transparent 30%),
+        #f3eee7;
+      color:#211a16;
+    }
+
+    .page{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    main{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:60px 24px 40px;
+    }
+
+    .container{
+      width:100%;
+      max-width:1120px;
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      overflow:hidden;
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(50,38,30,.08);
+      border-radius:30px;
+      box-shadow:0 30px 80px rgba(45,34,27,.13);
+    }
+
+    .content{
+      padding:64px 58px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .confirmation{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      width:max-content;
+      margin-bottom:24px;
+      padding:8px 13px 8px 9px;
+      border-radius:999px;
+      background:#edf3ee;
+      color:#315d48;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .check{
+      width:25px;
+      height:25px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      background:#315d48;
+      color:#fff;
+      font-size:14px;
+    }
+
+    .eyebrow{
+      margin-bottom:12px;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.17em;
+      text-transform:uppercase;
+      color:#927158;
+    }
+
+    h1{
+      max-width:520px;
+      font-size:48px;
+      line-height:1.04;
+      letter-spacing:-.045em;
+      margin-bottom:20px;
+    }
+
+    .intro{
+      max-width:530px;
+      font-size:15px;
+      line-height:1.75;
+      color:#665950;
+    }
+
+    .access{
+      margin-top:32px;
+      padding-top:28px;
+      border-top:1px solid #e5ddd6;
+    }
+
+    .access h2{
+      margin-bottom:8px;
+      font-size:16px;
+      line-height:1.4;
+    }
+
+    .access p{
+      max-width:500px;
+      font-size:13px;
+      line-height:1.65;
+      color:#75675e;
+    }
+
+    .button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      min-height:58px;
+      margin-top:25px;
+      padding:0 30px;
+      border-radius:999px;
+      background:#211a16;
+      color:#fff;
+      text-decoration:none;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.035em;
+      box-shadow:0 12px 30px rgba(33,26,22,.18);
+      transition:.2s ease;
+    }
+
+    .button:hover{
+      transform:translateY(-2px);
+      background:#3b3029;
+      box-shadow:0 16px 34px rgba(33,26,22,.22);
+    }
+
+    .arrow{
+      font-size:18px;
+      line-height:1;
+    }
+
+    .help{
+      max-width:500px;
+      margin-top:18px;
+      font-size:10.5px;
+      line-height:1.65;
+      color:#978a81;
+    }
+
+    .visual{
+      position:relative;
+      min-height:650px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      padding:50px 35px;
+      background:
+        radial-gradient(circle at 50% 45%, rgba(190,151,109,.20), transparent 40%),
+        #211a16;
+    }
+
+    .visual:before{
+      content:"";
+      position:absolute;
+      width:420px;
+      height:420px;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:50%;
+    }
+
+    .visual:after{
+      content:"";
+      position:absolute;
+      width:310px;
+      height:310px;
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:50%;
+    }
+
+    .product{
+      position:relative;
+      z-index:2;
+      width:100%;
+      max-width:500px;
+      height:auto;
+      filter:drop-shadow(0 28px 28px rgba(0,0,0,.32));
+    }
+
+    .visual-label{
+      position:absolute;
+      z-index:3;
+      left:34px;
+      bottom:30px;
+      color:rgba(255,255,255,.55);
+      font-size:9px;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    footer{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:18px;
+      padding:5px 20px 30px;
+    }
+
+    footer img{
+      width:105px;
+      height:auto;
+    }
+
+    footer span{
+      width:1px;
+      height:24px;
+      background:rgba(35,27,22,.15);
+    }
+
+    footer p{
+      font-size:9px;
+      color:#8b7e75;
+    }
+
+    @media(max-width:850px){
+      main{
+        padding:24px 16px;
+      }
+
+      .container{
+        grid-template-columns:1fr;
+        max-width:620px;
+      }
+
+      .content{
+        padding:44px 30px;
+        order:2;
+      }
+
+      .visual{
+        min-height:auto;
+        height:380px;
+        order:1;
+      }
+
+      .product{
+        max-width:390px;
+      }
+
+      h1{
+        font-size:40px;
+      }
+    }
+
+    @media(max-width:520px){
+      .container{
+        border-radius:22px;
+      }
+
+      .visual{
+        height:300px;
+        padding:25px;
+      }
+
+      .product{
+        max-width:310px;
+      }
+
+      .content{
+        padding:36px 23px 40px;
+      }
+
+      h1{
+        font-size:34px;
+      }
+
+      .button{
+        width:100%;
+        padding:0 18px;
+      }
+
+      footer{
+        flex-direction:column;
+        gap:10px;
+      }
+
+      footer span{
+        width:40px;
+        height:1px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <main>
+
+    <section class="container">
+
+      <div class="content">
+
+        <div class="confirmation">
+          <span class="check">✓</span>
+          Payment confirmed
+        </div>
+
+        <div class="eyebrow">The Barboza Nutrition System</div>
+
+        <h1>Your system is ready.</h1>
+
+        <p class="intro">
+          Your purchase has been successfully confirmed. You can now access
+          all guides, meal plans and materials included in
+          <strong>The Barboza Nutrition System.</strong>
+        </p>
+
+        <div class="access">
+
+          <h2>Your next step is to access the members area.</h2>
+
+          <p>
+            Sign in to Hotmart using the
+            <strong>same email address used for your purchase</strong>.
+            Under “My Purchases”, select
+            <strong>The Barboza Nutrition System – EN.</strong>
+          </p>
+
+          <a
+            class="button"
+            href="https://hotmart.com/pt-br/club/barboza-bru-corp/purchases"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ACCESS MY MATERIALS
+            <span class="arrow">→</span>
+          </a>
+
+          <p class="help">
+            You will also receive access information at the email address
+            used for your purchase. If you don't see the message, please
+            check your spam and promotions folders.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="visual">
+
+        <img
+          class="product"
+          src="barboza-nutrition-system-mockup-EN.PNG"
+          alt="The Barboza Nutrition System"
+        >
+
+        <div class="visual-label">
+          Carnivore + Animal-Based
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <img src="barboza-logo.jpeg" alt="Barboza">
+    <span></span>
+    <p>© 2026 The Barboza Method. All rights reserved.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
