@@ -1,6 +1,6 @@
 (() => {
   const checkouts = {
-  "nutrition": ""
+  "nutrition": "https://pay.hotmart.com/S107707449W?off=wb95bucj"
 };
   if (!Object.values(checkouts).every(Boolean)) return;
 
