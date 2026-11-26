@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="black-friday.css">
+  <script defer src="black-friday.js"></script>
 </head>
 <body>
 
@@ -20,6 +22,7 @@
 
 <section class="hero wrap">
   <div>
+    <aside class="bf-hero-bar" data-bf-only hidden aria-label="Black Friday"><div class="bf-hero-copy"><strong>BLACK FRIDAY · 50% OFF</strong><span>Nov 26 at noon to Nov 28 at noon · Brasília time (UTC−3)</span></div><a class="bf-hero-cta" href="#offer">See offer →</a></aside>
     <p class="eyebrow">THE BARBOZA METHOD • NUTRITION</p>
     <h1>THE BARBOZA<br><b>NUTRITION SYSTEM</b></h1>
     <p class="kicker">CARNIVORE + ANIMAL-BASED</p>
@@ -202,12 +205,13 @@
     </div>
 
     <div class="price">
-      <small>REGULAR PRICE</small>
-      <del>US$19.90</del>
-      <small>LAUNCH PRICE</small>
-      <strong>US$14.90</strong>
+      <small data-bf-normal>REGULAR PRICE</small>
+      <del data-bf-normal>US$19.90</del>
+      <small data-bf-normal>LAUNCH PRICE</small>
+      <strong data-bf-normal>US$14.90</strong>
+      <div class="bf-price" data-bf-only hidden><span class="bf-previous">Current launch price <del>US$ 14.90</del></span><div class="bf-price-label"><span>BLACK FRIDAY PRICE</span><span class="bf-percent">50% OFF</span></div><strong class="bf-amount">US$ 7.45</strong></div>
       <span>One-time payment</span>
-      <a class="btn checkout" href="#">GET ACCESS NOW →</a>
+      <a class="btn checkout" data-bf-checkout="nutrition" href="https://pay.hotmart.com/S107707449W?off=5yldr4qq">GET ACCESS NOW →</a>
       <em>Digital access after payment confirmation.</em>
     </div>
   </div>
@@ -299,15 +303,14 @@
 
 <div class="sticky">
   <div>
-    <small>LAUNCH PRICE</small>
-    <b>US$14.90</b>
+    <small data-bf-normal>LAUNCH PRICE</small>
+    <b data-bf-normal>US$14.90</b><small data-bf-only hidden>BLACK FRIDAY · 50% OFF</small><b data-bf-only hidden>US$ 7.45</b>
   </div>
-  <a class="checkout" href="#">GET ACCESS</a>
+  <a class="checkout" data-bf-checkout="nutrition" href="https://pay.hotmart.com/S107707449W?off=5yldr4qq">GET ACCESS</a>
 </div>
 
 <style>.legal-links{display:flex;gap:15px;flex-wrap:wrap;justify-content:center;margin:24px 0}.legal-links a{color:#e5bc63;font-size:14px}.barboza-cookie{position:fixed;bottom:18px;left:18px;right:18px;max-width:660px;margin:auto;padding:20px;background:#181818;color:white;border:1px solid #555;border-radius:12px;z-index:9999;box-shadow:0 8px 35px #0008;font-family:Arial,sans-serif}.barboza-cookie p{line-height:1.5;font-size:14px;margin:12px 0}.barboza-cookie a{color:#e5bc63}.barboza-cookie button,#barboza-cookie-settings{padding:10px 14px;border:1px solid #d4aa55;border-radius:6px;background:#d4aa55;color:#111;cursor:pointer;font-weight:700}.barboza-cookie .reject{background:transparent;color:white}.barboza-cookie .actions{display:flex;flex-wrap:wrap;gap:10px}#barboza-cookie-settings{position:fixed;bottom:10px;left:10px;z-index:9998;font-size:12px}.barboza-cookie[hidden],#barboza-cookie-settings[hidden]{display:none!important}</style>
 <div id="barboza-cookie-banner" class="barboza-cookie" role="dialog" aria-label="Cookie preferences" hidden><strong>YOUR PRIVACY MATTERS</strong><p>We use essential technologies to operate this website. With your permission, we may also use analytics and advertising cookies.</p><p><a href="privacy-policy.html">Privacy Policy</a> · <a href="cookie-policy.html">Cookie Policy</a> · <a href="terms-of-use.html">Terms of Use</a></p><div class="actions"><button type="button" id="barboza-accept">Accept optional cookies</button><button type="button" id="barboza-reject" class="reject">Reject optional cookies</button></div></div><button type="button" id="barboza-cookie-settings" hidden>Cookie preferences</button>
 <script>(function(){const key="barboza-nutrition-cookie-consent",banner=document.getElementById("barboza-cookie-banner"),settings=document.getElementById("barboza-cookie-settings");function show(){banner.hidden=false;settings.hidden=true}function enableTracking(){if(window.barbozaNutritionTrackingLoaded)return;window.barbozaNutritionTrackingLoaded=true;window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};window.gtag('js',new Date());window.gtag('config','G-6C10W92WP1');var ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-6C10W92WP1';document.head.appendChild(ga);!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2954822274890411');fbq('track','PageView')}function save(v){try{localStorage.setItem(key,v)}catch(e){}banner.hidden=true;settings.hidden=false;if(v==="accepted")enableTracking();else if(window.barbozaNutritionTrackingLoaded)window.location.reload()}document.getElementById("barboza-accept").addEventListener("click",()=>save("accepted"));document.getElementById("barboza-reject").addEventListener("click",()=>save("rejected"));settings.addEventListener("click",show);let v=null;try{v=localStorage.getItem(key)}catch(e){}if(v==="accepted"||v==="rejected"){banner.hidden=true;settings.hidden=false;if(v==="accepted")enableTracking()}else{show()}})();</script>
-<script src="script.js"></script>
 </body>
 </html>
